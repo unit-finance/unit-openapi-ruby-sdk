@@ -1,0 +1,26 @@
+# OpenapiClient::CreateApiTokenDataAttributes
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **scope** | **String** |  | [optional] |
+| **description** | **String** |  |  |
+| **expiration** | **Time** |  |  |
+| **source_ip** | **String** |  | [optional] |
+| **resources** | [**Array&lt;CreateApiTokenDataAttributesResourcesInner&gt;**](CreateApiTokenDataAttributesResourcesInner.md) |  | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::CreateApiTokenDataAttributes.new(
+  scope: null,
+  description: null,
+  expiration: null,
+  source_ip: null,
+  resources: null
+)
+```
+
