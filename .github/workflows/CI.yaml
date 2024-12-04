@@ -1,9 +1,9 @@
 name: CI
 on:
-  push:
   pull_request:
+  push:
     branches:
-      - master
+      - main
 
 jobs:
   unit-openapi-ruby-sdk:
@@ -12,13 +12,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
-          ruby-version: "3.2.0"
+          ruby-version: "3.1"
 
       - name: Install dependencies
-        uses: bundle install
+        run: bundle install
 
       - name: Execute tests
         run: bundle exec rspec
+        env:
+          UNIT_TOKEN: ${{ secrets.UNIT_TOKEN }}
+          TEST_PLAID_TOKEN: ${{ secrets.TEST_PLAID_TOKEN }}
 
       - name: Execute Rake build
         run: bundle exec rake build
