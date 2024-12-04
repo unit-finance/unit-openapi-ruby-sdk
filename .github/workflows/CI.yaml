@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  unit-openapi-ruby-sdk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        with:
+          ruby-version: "3.3.6"
+
+      - name: Install dependencies
+        uses: gradle/gradle-build-action@v2
+
+      - name: Execute tests
+        run: bundle exec rspec
+
+      - name: Execute Rake build
+        run: bundle exec rake build
