@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **account_id** | **String** |  | [optional] |
+| **account_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **customer_id** | **String** |  | [optional] |
 | **query** | **String** |  | [optional] |
 | **tags** | **Hash&lt;String, String&gt;** |  | [optional] |
@@ -25,6 +26,7 @@ require 'unit_openapi_ruby_sdk'
 
 instance = UnitOpenapiRubySdk::GetTransactionsListFilterParameter.new(
   account_id: null,
+  account_ids: null,
   customer_id: null,
   query: null,
   tags: null,

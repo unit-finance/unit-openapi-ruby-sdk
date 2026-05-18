@@ -14,7 +14,8 @@ require 'unit_openapi_ruby_sdk'
 UnitOpenapiRubySdk::UpdateBusinessBeneficialOwnerRequestData.openapi_one_of
 # =>
 # [
-#   :'UpdateBusinessBeneficialOwner'
+#   :'UpdateBusinessBeneficialOwner',
+#   :'UpdateThreadBusinessBeneficialOwner'
 # ]
 ```
 
@@ -43,5 +44,6 @@ UnitOpenapiRubySdk::UpdateBusinessBeneficialOwnerRequestData.build(data_that_doe
 #### Return type
 
 - `UpdateBusinessBeneficialOwner`
+- `UpdateThreadBusinessBeneficialOwner`
 - `nil` (if no type matches)
 

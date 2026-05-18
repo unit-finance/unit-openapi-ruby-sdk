@@ -8,7 +8,7 @@
 | **customer** | [**CustomerRelationship**](CustomerRelationship.md) |  | [optional] |
 | **customers** | [**CustomersRelationship**](CustomersRelationship.md) |  | [optional] |
 | **card** | [**CardRelationship**](CardRelationship.md) |  |  |
-| **data** | [**ReceivePaymentTransactionRelationshipData**](ReceivePaymentTransactionRelationshipData.md) |  |  |
+| **related_transaction** | [**RelatedTransactionRelationship**](RelatedTransactionRelationship.md) |  |  |
 
 ## Example
 
@@ -20,7 +20,7 @@ instance = UnitOpenapiRubySdk::CardReversalTransactionRelationships.new(
   customer: null,
   customers: null,
   card: null,
-  data: null
+  related_transaction: null
 )
 ```
 

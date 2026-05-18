@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **attributes** | [**CardTransactionAllOfAttributes**](CardTransactionAllOfAttributes.md) |  |  |
-| **relationships** | [**CardReversalTransactionRelationships**](CardReversalTransactionRelationships.md) |  |  |
+| **relationships** | [**CardTransactionRelationships**](CardTransactionRelationships.md) |  |  |
 
 ## Example
 

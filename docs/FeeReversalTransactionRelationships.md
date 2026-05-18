@@ -7,7 +7,7 @@
 | **account** | [**AccountRelationship**](AccountRelationship.md) |  |  |
 | **customer** | [**CustomerRelationship**](CustomerRelationship.md) |  | [optional] |
 | **customers** | [**CustomersRelationship**](CustomersRelationship.md) |  | [optional] |
-| **data** | [**ReceivePaymentTransactionRelationshipData**](ReceivePaymentTransactionRelationshipData.md) |  |  |
+| **related_transaction** | [**RelatedTransactionRelationship**](RelatedTransactionRelationship.md) |  |  |
 
 ## Example
 
@@ -18,7 +18,7 @@ instance = UnitOpenapiRubySdk::FeeReversalTransactionRelationships.new(
   account: null,
   customer: null,
   customers: null,
-  data: null
+  related_transaction: null
 )
 ```
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;AuthorizationRelationshipDataInner&gt;**](AuthorizationRelationshipDataInner.md) |  | [optional] |
+| **data** | [**AuthorizationRelationshipData**](AuthorizationRelationshipData.md) |  | [optional] |
 
 ## Example
 

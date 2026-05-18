@@ -17,8 +17,11 @@ UnitOpenapiRubySdk::UpdateApplicationRequestData.openapi_one_of
 #   :'UpdateBusinessApplication',
 #   :'UpdateBusinessApplicationBeneficialOwner',
 #   :'UpdateBusinessOfficer',
+#   :'UpdateBusinessThreadApplication',
 #   :'UpdateIndividualApplication',
-#   :'UpdateSoleProprietorApplication'
+#   :'UpdateIndividualThreadApplication',
+#   :'UpdateSoleProprietorApplication',
+#   :'UpdateSoleProprietorThreadApplication'
 # ]
 ```
 
@@ -49,7 +52,10 @@ UnitOpenapiRubySdk::UpdateApplicationRequestData.build(data_that_doesnt_match)
 - `UpdateBusinessApplication`
 - `UpdateBusinessApplicationBeneficialOwner`
 - `UpdateBusinessOfficer`
+- `UpdateBusinessThreadApplication`
 - `UpdateIndividualApplication`
+- `UpdateIndividualThreadApplication`
 - `UpdateSoleProprietorApplication`
+- `UpdateSoleProprietorThreadApplication`
 - `nil` (if no type matches)
 

@@ -13,6 +13,7 @@ RSpec.describe 'Payment' do
 
   describe 'test an instance of Payment' do
     let(:api_instance) { UnitOpenapiRubySdk::UnitApi.new(UnitOpenapiRubySdk::ApiClient.new(configuration)) }
+    let(:plaid_processor_token) { ENV.fetch('TEST_PLAID_TOKEN', '').strip }
 
     it 'should create an instance of BookPayment' do
       request = { data: UnitOpenapiRubySdk::CreateBookPayment.new(type: 'bookPayment', attributes:
@@ -24,10 +25,18 @@ RSpec.describe 'Payment' do
 
     it 'should create an instance of AchPayment with plaid token' do
       Dotenv.load
+      skip('Set TEST_PLAID_TOKEN to a valid Plaid processor token (processor-<environment>-<identifier>)') unless plaid_processor_token.match?(/\Aprocessor-[^-]+-.+\z/)
       request = { data: UnitOpenapiRubySdk::CreateAchPaymentPlaid.new(type: 'achPayment', attributes:
-        UnitOpenapiRubySdk::CreateAchPaymentPlaidAttributes.new(amount: 1000, direction: 'Credit', description: 'test payment', plaid_processor_token: ENV['TEST_PLAID_TOKEN']),
+        UnitOpenapiRubySdk::CreateAchPaymentPlaidAttributes.new(amount: 1000, direction: 'Credit', description: 'test payment', plaid_processor_token: plaid_processor_token),
                                                                  relationships: UnitOpenapiRubySdk::CreateAchPaymentRelationships.new(account: { "data": { "type": 'depositAccount', "id": '27573' } }).to_hash).to_hash }
-      response = api_instance.create_payment(request)
+      response = begin
+        api_instance.create_payment(request)
+      rescue UnitOpenapiRubySdk::ApiError => e
+        if e.code.to_i == 400 && e.response_body.to_s.include?('INVALID_PROCESSOR_TOKEN')
+          skip('TEST_PLAID_TOKEN was rejected by Plaid (INVALID_PROCESSOR_TOKEN)')
+        end
+        raise
+      end
       expect(response.data.type).to eq('achPayment')
     end
   end

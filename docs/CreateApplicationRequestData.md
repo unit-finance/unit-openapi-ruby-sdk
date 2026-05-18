@@ -15,8 +15,11 @@ UnitOpenapiRubySdk::CreateApplicationRequestData.openapi_one_of
 # =>
 # [
 #   :'CreateBusinessApplication',
+#   :'CreateBusinessThreadApplication',
 #   :'CreateIndividualApplication',
-#   :'CreateSoleProprietorApplication'
+#   :'CreateIndividualThreadApplication',
+#   :'CreateSoleProprietorApplication',
+#   :'CreateSoleProprietorThreadApplication'
 # ]
 ```
 
@@ -45,7 +48,10 @@ UnitOpenapiRubySdk::CreateApplicationRequestData.build(data_that_doesnt_match)
 #### Return type
 
 - `CreateBusinessApplication`
+- `CreateBusinessThreadApplication`
 - `CreateIndividualApplication`
+- `CreateIndividualThreadApplication`
 - `CreateSoleProprietorApplication`
+- `CreateSoleProprietorThreadApplication`
 - `nil` (if no type matches)
 
