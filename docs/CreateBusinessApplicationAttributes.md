@@ -29,6 +29,7 @@
 | **countries_of_operation** | **Array&lt;String&gt;** |  | [optional] |
 | **stock_symbol** | **String** |  | [optional] |
 | **business_vertical** | [**BusinessVertical**](BusinessVertical.md) |  | [optional] |
+| **operating_address** | [**Address**](Address.md) |  | [optional] |
 
 ## Example
 
@@ -60,7 +61,8 @@ instance = UnitOpenapiRubySdk::CreateBusinessApplicationAttributes.new(
   year_of_incorporation: null,
   countries_of_operation: null,
   stock_symbol: null,
-  business_vertical: null
+  business_vertical: null,
+  operating_address: null
 )
 ```
 

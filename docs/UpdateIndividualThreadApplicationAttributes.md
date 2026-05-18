@@ -1,4 +1,4 @@
-# UnitOpenapiRubySdk::SchemasUpdateAchReceivedPaymentAttributes
+# UnitOpenapiRubySdk::UpdateIndividualThreadApplicationAttributes
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'unit_openapi_ruby_sdk'
 
-instance = UnitOpenapiRubySdk::SchemasUpdateAchReceivedPaymentAttributes.new(
+instance = UnitOpenapiRubySdk::UpdateIndividualThreadApplicationAttributes.new(
   tags: null
 )
 ```

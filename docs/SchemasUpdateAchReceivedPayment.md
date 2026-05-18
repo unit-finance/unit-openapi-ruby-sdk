@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **type** | **String** |  | [default to &#39;achReceivedPayment&#39;] |
-| **attributes** | [**SchemasUpdateAchReceivedPaymentAttributes**](SchemasUpdateAchReceivedPaymentAttributes.md) |  |  |
+| **attributes** | [**UpdateIndividualThreadApplicationAttributes**](UpdateIndividualThreadApplicationAttributes.md) |  |  |
 
 ## Example
 

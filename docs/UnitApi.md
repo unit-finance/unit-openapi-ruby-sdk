@@ -1225,7 +1225,7 @@ UnitOpenapiRubySdk.configure do |config|
 end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
-create_ach_received_payment_transaction_request = UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRequest.new({data: UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRequestData.new({type: 'achReceivedPayment', attributes: UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRequestDataAttributes.new({amount: 37, completion_date: Date.today, description: 'description_example', company_name: 'company_name_example'}), relationships: UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateACHReceivedPaymentTransactionRequest | Create ACH Received Payment Transaction Simulation Request
+create_ach_received_payment_transaction_request = UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRequest.new({data: UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRequestData.new({type: 'achReceivedPayment', attributes: UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRequestDataAttributes.new({amount: 3.56, completion_date: Date.today, description: 'description_example', company_name: 'company_name_example'}), relationships: UnitOpenapiRubySdk::CreateACHReceivedPaymentTransactionRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateACHReceivedPaymentTransactionRequest | Create ACH Received Payment Transaction Simulation Request
 
 begin
   # Create ACH Received Payment Transaction Simulation
@@ -1574,7 +1574,7 @@ UnitOpenapiRubySdk.configure do |config|
 end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
-create_atm_deposit_simulation_request = UnitOpenapiRubySdk::CreateAtmDepositSimulationRequest.new({data: UnitOpenapiRubySdk::CreateAtmDepositSimulationRequestData.new({type: 'atmTransaction', attributes: UnitOpenapiRubySdk::CreateAtmDepositSimulationRequestDataAttributes.new({amount: 37, atm_name: 'atm_name_example', last4_digits: 'last4_digits_example'}), relationships: UnitOpenapiRubySdk::CreateAtmDepositSimulationRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateAtmDepositSimulationRequest | Create Atm Deposit Simulation Request
+create_atm_deposit_simulation_request = UnitOpenapiRubySdk::CreateAtmDepositSimulationRequest.new({data: UnitOpenapiRubySdk::CreateAtmDepositSimulationRequestData.new({type: 'atmTransaction', attributes: UnitOpenapiRubySdk::CreateAtmDepositSimulationRequestDataAttributes.new({amount: 3.56, atm_name: 'atm_name_example', last4_digits: 'last4_digits_example'}), relationships: UnitOpenapiRubySdk::CreateAtmDepositSimulationRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateAtmDepositSimulationRequest | Create Atm Deposit Simulation Request
 
 begin
   # Create Atm Deposit Simulation
@@ -1781,7 +1781,7 @@ UnitOpenapiRubySdk.configure do |config|
 end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
-create_check_payment_request = UnitOpenapiRubySdk::CreateCheckPaymentRequest.new({data: UnitOpenapiRubySdk::CreateCheckPaymentRequestData.new({type: 'checkPayment', attributes: UnitOpenapiRubySdk::CreateCheckPaymentRequestDataAttributes.new({counterparty: UnitOpenapiRubySdk::CreateCheckPaymentRequestDataAttributesCounterparty.new({name: 'name_example', address: UnitOpenapiRubySdk::Address.new({street: 'street_example', city: 'city_example', state: 'state_example', postal_code: 'postal_code_example', country: 'country_example'})}), amount: 37, idempotency_key: 'idempotency_key_example', description: 'description_example'}), relationships: UnitOpenapiRubySdk::CreateCheckPaymentRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})}), customer: UnitOpenapiRubySdk::CustomerRelationship.new({data: UnitOpenapiRubySdk::CustomerRelationshipData.new({type: 'customer', id: 'id_example'})})})})}) # CreateCheckPaymentRequest | Create Check Payment Request
+create_check_payment_request = UnitOpenapiRubySdk::CreateCheckPaymentRequest.new({data: UnitOpenapiRubySdk::CreateCheckPaymentRequestData.new({type: 'checkPayment', attributes: UnitOpenapiRubySdk::CreateCheckPaymentRequestDataAttributes.new({counterparty: UnitOpenapiRubySdk::CreateCheckPaymentRequestDataAttributesCounterparty.new({name: 'name_example', address: UnitOpenapiRubySdk::Address.new({street: 'street_example', city: 'city_example', state: 'state_example', postal_code: 'postal_code_example', country: 'country_example'})}), amount: 3.56, idempotency_key: 'idempotency_key_example', description: 'description_example'}), relationships: UnitOpenapiRubySdk::CreateCheckPaymentRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})}), customer: UnitOpenapiRubySdk::CustomerRelationship.new({data: UnitOpenapiRubySdk::CustomerRelationshipData.new({type: 'customer', id: 'id_example'})})})})}) # CreateCheckPaymentRequest | Create Check Payment Request
 
 begin
   # Create Check Payment
@@ -2061,7 +2061,7 @@ UnitOpenapiRubySdk.configure do |config|
 end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
-create_fee_request = UnitOpenapiRubySdk::CreateFeeRequest.new({data: UnitOpenapiRubySdk::CreateFeeRequestData.new({type: 'fee', attributes: UnitOpenapiRubySdk::CreateFeeRequestDataAttributes.new({amount: 37, description: 'description_example'}), relationships: UnitOpenapiRubySdk::CreateFeeRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateFeeRequest | Create Fee Request
+create_fee_request = UnitOpenapiRubySdk::CreateFeeRequest.new({data: UnitOpenapiRubySdk::CreateFeeRequestData.new({type: 'fee', attributes: UnitOpenapiRubySdk::CreateFeeRequestDataAttributes.new({amount: 3.56, description: 'description_example'}), relationships: UnitOpenapiRubySdk::CreateFeeRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateFeeRequest | Create Fee Request
 
 begin
   # Create Fee
@@ -2130,7 +2130,7 @@ UnitOpenapiRubySdk.configure do |config|
 end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
-create_incoming_ach_payment_request = UnitOpenapiRubySdk::CreateIncomingAchPaymentRequest.new({data: UnitOpenapiRubySdk::CreateIncomingAchPaymentRequestData.new({type: 'achReceivedPayment', attributes: UnitOpenapiRubySdk::CreateIncomingAchPaymentRequestDataAttributes.new({amount: 37, settlement_date: Date.today, company_name: 'company_name_example'}), relationships: UnitOpenapiRubySdk::CreateIncomingAchPaymentTransactionRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateIncomingAchPaymentRequest | Create Incoming ACH Payment Simulation Request
+create_incoming_ach_payment_request = UnitOpenapiRubySdk::CreateIncomingAchPaymentRequest.new({data: UnitOpenapiRubySdk::CreateIncomingAchPaymentRequestData.new({type: 'achReceivedPayment', attributes: UnitOpenapiRubySdk::CreateIncomingAchPaymentRequestDataAttributes.new({amount: 3.56, settlement_date: Date.today, company_name: 'company_name_example'}), relationships: UnitOpenapiRubySdk::CreateIncomingAchPaymentTransactionRelationships.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})})})})}) # CreateIncomingAchPaymentRequest | Create Incoming ACH Payment Simulation Request
 
 begin
   # Create Incoming ACH Payment Simulation
@@ -2268,7 +2268,7 @@ UnitOpenapiRubySdk.configure do |config|
 end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
-create_recurring_payment_request = UnitOpenapiRubySdk::CreateRecurringPaymentRequest.new({data: UnitOpenapiRubySdk::CreateRecurringCreditAchPayment.new({type: 'recurringCreditAchPayment', attributes: UnitOpenapiRubySdk::CreateRecurringCreditAchPaymentAttributes.new({amount: 37, description: 'description_example', schedule: UnitOpenapiRubySdk::MonthlySchedule.new({interval: 'Monthly'})}), relationships: UnitOpenapiRubySdk::CreatePaymentRelationshipsWithCounterparty.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})}), counterparty: UnitOpenapiRubySdk::CounterpartyRelationship.new({data: UnitOpenapiRubySdk::CounterpartyRelationshipData.new({type: 'counterparty', id: 'id_example'})})})})}) # CreateRecurringPaymentRequest | Create Recurring Payment Request
+create_recurring_payment_request = UnitOpenapiRubySdk::CreateRecurringPaymentRequest.new({data: UnitOpenapiRubySdk::CreateRecurringCreditAchPayment.new({type: 'recurringCreditAchPayment', attributes: UnitOpenapiRubySdk::CreateRecurringCreditAchPaymentAttributes.new({amount: 3.56, description: 'description_example', schedule: UnitOpenapiRubySdk::MonthlySchedule.new({interval: 'Monthly'})}), relationships: UnitOpenapiRubySdk::CreatePaymentRelationshipsWithCounterparty.new({account: UnitOpenapiRubySdk::AccountRelationship.new({data: UnitOpenapiRubySdk::AccountRelationshipData.new({type: 'account', id: 'id_example'})}), counterparty: UnitOpenapiRubySdk::CounterpartyRelationship.new({data: UnitOpenapiRubySdk::CounterpartyRelationshipData.new({type: 'counterparty', id: 'id_example'})})})})}) # CreateRecurringPaymentRequest | Create Recurring Payment Request
 
 begin
   # Create Recurring Payment
@@ -8686,7 +8686,7 @@ end
 
 api_instance = UnitOpenapiRubySdk::UnitApi.new
 payment_id = 'payment_id_example' # String | ID of the payment to update
-update_received_payment_request = UnitOpenapiRubySdk::UpdateReceivedPaymentRequest.new({data: UnitOpenapiRubySdk::SchemasUpdateAchReceivedPayment.new({type: 'achReceivedPayment', attributes: UnitOpenapiRubySdk::SchemasUpdateAchReceivedPaymentAttributes.new})}) # UpdateReceivedPaymentRequest | Update Received Payment Request
+update_received_payment_request = UnitOpenapiRubySdk::UpdateReceivedPaymentRequest.new({data: UnitOpenapiRubySdk::SchemasUpdateAchReceivedPayment.new({type: 'achReceivedPayment', attributes: UnitOpenapiRubySdk::UpdateIndividualThreadApplicationAttributes.new})}) # UpdateReceivedPaymentRequest | Update Received Payment Request
 
 begin
   # Update Received Payment
