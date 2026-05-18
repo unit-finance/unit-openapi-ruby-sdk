@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unit_openapi_ruby_sdk (0.1.0)
+    unit_openapi_ruby_sdk (0.2.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
