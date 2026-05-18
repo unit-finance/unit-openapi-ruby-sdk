@@ -38,32 +38,75 @@ bundle install
 ## Usage example
 
 ```ruby
-token = "your_token"
+require 'unit_openapi_ruby_sdk'
+require 'json'
 
-@configuration = UnitOpenapiRubySdk::Configuration.new.tap do |config|
-    config.access_token = token
-    access_t = config.access_token
-    config.api_key['Authorization'] = access_t
-    config.api_key_prefix['Authorization'] = 'Bearer'
+token = 'your_token'
+
+configuration = UnitOpenapiRubySdk::Configuration.new.tap do |config|
+  config.access_token = token
+  access_t = config.access_token
+  config.api_key['Authorization'] = access_t
+  config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-let(:api_instance) { UnitOpenapiRubySdk::UnitApi.new(UnitOpenapiRubySdk::ApiClient.new(configuration)) }
+api = UnitOpenapiRubySdk::UnitApi.new(UnitOpenapiRubySdk::ApiClient.new(configuration))
 
-email = 'jone.doe@unit-finance.com'
+# Step 1: Create an individual application
 address = UnitOpenapiRubySdk::Address.new(street: '123 Main St', city: 'San Francisco', state: 'CA', postal_code: '94205', country: 'US')
-phone = UnitOpenapiRubySdk::Phone.new(country_code: '380', number: '555123222')
+phone = UnitOpenapiRubySdk::Phone.new(country_code: '1', number: '5555550100')
 
-request = { data: UnitOpenapiRubySdk::CreateIndividualApplication
-    .new(type: 'individualApplication',
-        attributes: UnitOpenapiRubySdk::CreateIndividualApplicationAttributes
-                    .new(ssn: '123456789',
-                        full_name: UnitOpenapiRubySdk::FullName.new({ first: 'John', last: 'Kenn' }), date_of_birth: Date.new(1989, 2, 1),
-                        address: address,
-                        email: email,
-                        phone: phone,
-                        occupation: 'ArchitectOrEngineer',
-                        annual_income: 'UpTo10k',
-                        source_of_income: 'EmploymentOrPayrollIncome')).to_hash }
+application_request = {
+  data: UnitOpenapiRubySdk::CreateIndividualApplication.new(
+    type: 'individualApplication',
+    attributes: UnitOpenapiRubySdk::CreateIndividualApplicationAttributes.new(
+      ssn: '123456789',
+      full_name: UnitOpenapiRubySdk::FullName.new(first: 'John', last: 'Doe'),
+      date_of_birth: Date.new(1989, 2, 1),
+      address: address,
+      email: 'john.doe@example.com',
+      phone: phone,
+      occupation: 'ArchitectOrEngineer',
+      annual_income: 'UpTo10k',
+      source_of_income: 'EmploymentOrPayrollIncome'
+    )
+  ).to_hash
+}
 
-response = api_instance.create_application(request)
+application_response = api.create_application(application_request)
+# create_application deserializes into base Application (id/type only). Re-fetch and use
+# IndividualApplication.build_from_hash to cast to the correct subtype so attributes and
+# relationships (e.g. customer) are available.
+application = UnitOpenapiRubySdk::IndividualApplication.build_from_hash(
+  JSON.parse(Typhoeus.get(
+    "#{configuration.scheme}://#{configuration.host}/applications/#{application_response.data.id}",
+    headers: { 'Authorization' => "Bearer #{token}", 'Content-Type' => 'application/vnd.api+json' }
+  ).body)['data']
+)
+customer_id = application.relationships.customer.data.id
+customer_type = application.relationships.customer.data.type
+
+# Step 2: Fetch the created customer
+customer_response = api.get_customer(customer_id)
+customer = customer_response.data
+
+# Step 3: Create a deposit account for the customer
+account_request = UnitOpenapiRubySdk::CreateAccountRequest.new(
+  data: UnitOpenapiRubySdk::CreateDepositAccount.new(
+    type: 'depositAccount',
+    attributes: UnitOpenapiRubySdk::CreateDepositAccountAttributes.new(
+      deposit_product: 'checking'
+    ),
+    relationships: UnitOpenapiRubySdk::CreateDepositAccountRelationships.new(
+      customer: UnitOpenapiRubySdk::CustomerRelationship.new(
+        data: UnitOpenapiRubySdk::CustomerRelationshipData.new(
+          type: customer_type,
+          id: customer.id
+        )
+      )
+    )
+  )
+)
+
+account_response = api.create_account(account_request)
 ```
